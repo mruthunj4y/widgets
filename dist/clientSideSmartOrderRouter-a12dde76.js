@@ -1,11 +1,11 @@
 import _defineProperty from '@babel/runtime/helpers/defineProperty';
 import _asyncToGenerator from '@babel/runtime/helpers/asyncToGenerator';
 import _regeneratorRuntime from '@babel/runtime/regenerator';
-import { Token, CurrencyAmount } from '@uniswap/sdk-core';
-import { ChainId, StaticV2SubgraphProvider, UniswapMulticallProvider, OnChainQuoteProvider, AlphaRouter, routeAmountsToString } from '@uniswap/smart-order-router';
+import { Token, CurrencyAmount } from '@surge/sdk-core';
+import { ChainId, StaticV2SubgraphProvider, UniswapMulticallProvider, OnChainQuoteProvider, AlphaRouter, routeAmountsToString } from '@surge/smart-order-router';
 import { Q as QuoteState, i as isExactInput, S as SwapRouterNativeAssets, n as nativeOnChain } from './index-20d21b03.js';
 import JSBI from 'jsbi';
-import { Protocol } from '@uniswap/router-sdk';
+import { Protocol } from '@surge/router-sdk';
 import 'react';
 import 'buffer';
 import '@babel/runtime/helpers/slicedToArray';
@@ -18,7 +18,7 @@ import '@babel/runtime/helpers/extends';
 import 'rebass';
 import '@web3-react/core';
 import '@babel/runtime/helpers/objectWithoutProperties';
-import '@uniswap/universal-router-sdk';
+import '@surge/universal-router-sdk';
 import '@reduxjs/toolkit/query/react';
 import 'jotai/immer';
 import 'jotai/utils';
@@ -31,21 +31,21 @@ import 'tiny-invariant';
 import '@ethersproject/units';
 import '@reduxjs/toolkit';
 import 'jotai';
-import '@uniswap/v2-sdk';
-import '@uniswap/v3-sdk';
+import '@surge/v2-sdk';
+import '@surge/v3-sdk';
 import '@babel/runtime/helpers/typeof';
 import '@babel/runtime/helpers/get';
 import '@babel/runtime/helpers/assertThisInitialized';
 import '@babel/runtime/helpers/wrapNativeSuper';
 import 'qs';
 import '@ethersproject/abi';
-import '@uniswap/redux-multicall';
+import '@surge/redux-multicall';
 import '@ethersproject/address';
 import '@ethersproject/constants';
 import '@ethersproject/contracts';
-import '@uniswap/permit2-sdk';
-import '@uniswap/conedison/provider/signing';
-import '@uniswap/conedison/format';
+import '@surge/permit2-sdk';
+import '@surge/conedison/provider/signing';
+import '@surge/conedison/format';
 import 'ethers/lib/utils';
 import '@ethersproject/bytes';
 import '@ethersproject/bignumber';
@@ -65,7 +65,7 @@ import 'react-virtualized-auto-sizer';
 import 'react-window';
 import '@web3-react/walletconnect';
 import 'qrcode';
-import '@uniswap/conedison/provider/index';
+import '@surge/conedison/provider/index';
 import '@ethersproject/providers';
 import '@web3-react/eip1193';
 import '@web3-react/metamask';
@@ -264,7 +264,7 @@ function getRouter(chainId, provider) {
   var routers = routersCache.get(provider) || {};
   var cached = routers[chainId];
   if (cached) return cached; // V2 is unsupported for chains other than mainnet.
-  // TODO(zzmp): Upstream to @uniswap/smart-order-router, exporting an enum of supported v2 chains for clarity.
+  // TODO(zzmp): Upstream to @surge/smart-order-router, exporting an enum of supported v2 chains for clarity.
 
   var v2SubgraphProvider;
 
@@ -272,7 +272,7 @@ function getRouter(chainId, provider) {
     v2SubgraphProvider = new StaticV2SubgraphProvider(chainId);
   } // V3 computes on-chain, so the quoter must have gas limits appropriate to the provider.
   // Most defaults are fine, but polygon needs a lower gas limit.
-  // TODO(zzmp): Upstream to @uniswap/smart-order-router, possibly making this easier to modify
+  // TODO(zzmp): Upstream to @surge/smart-order-router, possibly making this easier to modify
   // (eg allowing configuration without an instance to avoid duplicating multicall2Provider).
 
 

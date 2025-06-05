@@ -11,11 +11,11 @@ import _extends$b from '@babel/runtime/helpers/extends';
 import { Text } from 'rebass';
 import { useWeb3React, Web3ReactProvider, initializeConnector } from '@web3-react/core';
 import _objectWithoutProperties from '@babel/runtime/helpers/objectWithoutProperties';
-import { UNIVERSAL_ROUTER_ADDRESS, SwapRouter as SwapRouter$1 } from '@uniswap/universal-router-sdk';
+import { UNIVERSAL_ROUTER_ADDRESS, SwapRouter as SwapRouter$1 } from '@surge/universal-router-sdk';
 import { skipToken, createApi } from '@reduxjs/toolkit/query/react';
 import { atomWithImmer, withImmer } from 'jotai/immer';
 import { useUpdateAtom, useAtomValue, atomWithReset } from 'jotai/utils';
-import { Token, WETH9, Ether, NativeCurrency, CurrencyAmount, TradeType, MaxUint256, Percent, Fraction, Price as Price$1 } from '@uniswap/sdk-core';
+import { Token, WETH9, Ether, NativeCurrency, CurrencyAmount, TradeType, MaxUint256, Percent, Fraction, Price as Price$1 } from '@surge/sdk-core';
 import _classCallCheck from '@babel/runtime/helpers/classCallCheck';
 import _createClass from '@babel/runtime/helpers/createClass';
 import _inherits from '@babel/runtime/helpers/inherits';
@@ -26,9 +26,9 @@ import { parseUnits } from '@ethersproject/units';
 import JSBI from 'jsbi';
 import { isPlainObject, configureStore } from '@reduxjs/toolkit';
 import { atom, useAtom, Provider as Provider$a } from 'jotai';
-import { Trade as Trade$1, MixedRouteSDK, Protocol, partitionMixedRouteByProtocol, SwapRouter } from '@uniswap/router-sdk';
-import { Route as Route$2, Pair } from '@uniswap/v2-sdk';
-import { Route as Route$1, Pool as Pool$1, FeeAmount, toHex as toHex$1 } from '@uniswap/v3-sdk';
+import { Trade as Trade$1, MixedRouteSDK, Protocol, partitionMixedRouteByProtocol, SwapRouter } from '@surge/router-sdk';
+import { Route as Route$2, Pair } from '@surge/v2-sdk';
+import { Route as Route$1, Pool as Pool$1, FeeAmount, toHex as toHex$1 } from '@surge/v3-sdk';
 import _typeof from '@babel/runtime/helpers/typeof';
 import _asyncToGenerator from '@babel/runtime/helpers/asyncToGenerator';
 import _regeneratorRuntime from '@babel/runtime/regenerator';
@@ -37,13 +37,13 @@ import _assertThisInitialized from '@babel/runtime/helpers/assertThisInitialized
 import _wrapNativeSuper from '@babel/runtime/helpers/wrapNativeSuper';
 import qs from 'qs';
 import { Interface } from '@ethersproject/abi';
-import { createMulticall, NEVER_RELOAD } from '@uniswap/redux-multicall';
+import { createMulticall, NEVER_RELOAD } from '@surge/redux-multicall';
 import { getAddress } from '@ethersproject/address';
 import { AddressZero, MaxUint256 as MaxUint256$1 } from '@ethersproject/constants';
 import { Contract } from '@ethersproject/contracts';
-import { PERMIT2_ADDRESS, MaxAllowanceTransferAmount, AllowanceTransfer } from '@uniswap/permit2-sdk';
-import { signTypedData } from '@uniswap/conedison/provider/signing';
-import { formatPriceImpact, formatCurrencyAmount as formatCurrencyAmount$1, NumberType, formatPrice } from '@uniswap/conedison/format';
+import { PERMIT2_ADDRESS, MaxAllowanceTransferAmount, AllowanceTransfer } from '@surge/permit2-sdk';
+import { signTypedData } from '@surge/conedison/provider/signing';
+import { formatPriceImpact, formatCurrencyAmount as formatCurrencyAmount$1, NumberType, formatPrice } from '@surge/conedison/format';
 import { namehash } from 'ethers/lib/utils';
 import { splitSignature, arrayify } from '@ethersproject/bytes';
 import { BigNumber } from '@ethersproject/bignumber';
@@ -63,7 +63,7 @@ import AutoSizer from 'react-virtualized-auto-sizer';
 import { FixedSizeList, areEqual } from 'react-window';
 import { URI_AVAILABLE, WalletConnect } from '@web3-react/walletconnect';
 import QRCode from 'qrcode';
-import { sendTransaction } from '@uniswap/conedison/provider/index';
+import { sendTransaction } from '@surge/conedison/provider/index';
 import { JsonRpcProvider, StaticJsonRpcProvider } from '@ethersproject/providers';
 import { EIP1193 } from '@web3-react/eip1193';
 import { MetaMask } from '@web3-react/metamask';
@@ -1774,7 +1774,7 @@ var BrandedFooter = /*#__PURE__*/memo(function BrandedFooter() {
   return /*#__PURE__*/React.createElement(Wrapper$1, {
     justify: "center"
   }, /*#__PURE__*/React.createElement(UniswapA, {
-    href: "https://uniswap.org/"
+    href: "https://surge.org/"
   }, /*#__PURE__*/React.createElement(Row, {
     gap: 0.25
   }, /*#__PURE__*/React.createElement(Logo$1, null), /*#__PURE__*/React.createElement(Caption$1, null, /*#__PURE__*/React.createElement(Trans, {

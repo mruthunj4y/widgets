@@ -3,11 +3,11 @@
 var _defineProperty = require('@babel/runtime/helpers/defineProperty');
 var _asyncToGenerator = require('@babel/runtime/helpers/asyncToGenerator');
 var _regeneratorRuntime = require('@babel/runtime/regenerator');
-var sdkCore = require('@uniswap/sdk-core');
-var smartOrderRouter = require('@uniswap/smart-order-router');
+var sdkCore = require('@surge/sdk-core');
+var smartOrderRouter = require('@surge/smart-order-router');
 var index = require('./index-28381861.cjs');
 var JSBI = require('jsbi');
-var routerSdk = require('@uniswap/router-sdk');
+var routerSdk = require('@surge/router-sdk');
 require('react');
 require('buffer');
 require('@babel/runtime/helpers/slicedToArray');
@@ -20,7 +20,7 @@ require('@babel/runtime/helpers/extends');
 require('rebass');
 require('@web3-react/core');
 require('@babel/runtime/helpers/objectWithoutProperties');
-require('@uniswap/universal-router-sdk');
+require('@surge/universal-router-sdk');
 require('@reduxjs/toolkit/query/react');
 require('jotai/immer');
 require('jotai/utils');
@@ -33,21 +33,21 @@ require('tiny-invariant');
 require('@ethersproject/units');
 require('@reduxjs/toolkit');
 require('jotai');
-require('@uniswap/v2-sdk');
-require('@uniswap/v3-sdk');
+require('@surge/v2-sdk');
+require('@surge/v3-sdk');
 require('@babel/runtime/helpers/typeof');
 require('@babel/runtime/helpers/get');
 require('@babel/runtime/helpers/assertThisInitialized');
 require('@babel/runtime/helpers/wrapNativeSuper');
 require('qs');
 require('@ethersproject/abi');
-require('@uniswap/redux-multicall');
+require('@surge/redux-multicall');
 require('@ethersproject/address');
 require('@ethersproject/constants');
 require('@ethersproject/contracts');
-require('@uniswap/permit2-sdk');
-require('@uniswap/conedison/provider/signing');
-require('@uniswap/conedison/format');
+require('@surge/permit2-sdk');
+require('@surge/conedison/provider/signing');
+require('@surge/conedison/format');
 require('ethers/lib/utils');
 require('@ethersproject/bytes');
 require('@ethersproject/bignumber');
@@ -67,7 +67,7 @@ require('react-virtualized-auto-sizer');
 require('react-window');
 require('@web3-react/walletconnect');
 require('qrcode');
-require('@uniswap/conedison/provider/index');
+require('@surge/conedison/provider/index');
 require('@ethersproject/providers');
 require('@web3-react/eip1193');
 require('@web3-react/metamask');
@@ -273,7 +273,7 @@ function getRouter(chainId, provider) {
   var routers = routersCache.get(provider) || {};
   var cached = routers[chainId];
   if (cached) return cached; // V2 is unsupported for chains other than mainnet.
-  // TODO(zzmp): Upstream to @uniswap/smart-order-router, exporting an enum of supported v2 chains for clarity.
+  // TODO(zzmp): Upstream to @surge/smart-order-router, exporting an enum of supported v2 chains for clarity.
 
   var v2SubgraphProvider;
 
@@ -281,7 +281,7 @@ function getRouter(chainId, provider) {
     v2SubgraphProvider = new smartOrderRouter.StaticV2SubgraphProvider(chainId);
   } // V3 computes on-chain, so the quoter must have gas limits appropriate to the provider.
   // Most defaults are fine, but polygon needs a lower gas limit.
-  // TODO(zzmp): Upstream to @uniswap/smart-order-router, possibly making this easier to modify
+  // TODO(zzmp): Upstream to @surge/smart-order-router, possibly making this easier to modify
   // (eg allowing configuration without an instance to avoid duplicating multicall2Provider).
 
 
@@ -289,7 +289,7 @@ function getRouter(chainId, provider) {
   var multicall2Provider;
 
   if ([smartOrderRouter.ChainId.POLYGON, smartOrderRouter.ChainId.POLYGON_MUMBAI].includes(chainId)) {
-    multicall2Provider = new smartOrderRouter.UniswapMulticallProvider(chainId, provider, 375000); // See https://github.com/Uniswap/smart-order-router/blob/98c58bdee9981fd9ffac9e7d7a97b18302d5f77a/src/routers/alpha-router/alpha-router.ts#L464-L487
+    multicall2Provider = new smartOrderRouter.surgeMulticallProvider(chainId, provider, 375000); // See https://github.com/surge/smart-order-router/blob/98c58bdee9981fd9ffac9e7d7a97b18302d5f77a/src/routers/alpha-router/alpha-router.ts#L464-L487
 
     onChainQuoteProvider = new smartOrderRouter.OnChainQuoteProvider(chainId, provider, multicall2Provider, {
       retries: 2,

@@ -1,14 +1,14 @@
 /// <reference types="react" />
-import { TradeType, Currency, Percent, CurrencyAmount, Token } from '@uniswap/sdk-core';
-export { Currency, TradeType } from '@uniswap/sdk-core';
+import { TradeType, Currency, Percent, CurrencyAmount, Token } from '@surge/sdk-core';
+export { Currency, TradeType } from '@surge/sdk-core';
 import { BaseProvider, JsonRpcProvider } from '@ethersproject/providers';
 export { JsonRpcProvider } from '@ethersproject/providers';
-import { Trade } from '@uniswap/router-sdk';
-import { ChainId } from '@uniswap/smart-order-router';
+import { Trade } from '@surge/router-sdk';
+import { ChainId } from '@surge/smart-order-router';
 import { TransactionReceipt, TransactionResponse } from '@ethersproject/abstract-provider';
 export { Provider as EthersProvider } from '@ethersproject/abstract-provider';
-import { TokenInfo, TokenList } from '@uniswap/token-lists';
-export { TokenInfo } from '@uniswap/token-lists';
+import { TokenInfo, TokenList } from '@surge/token-lists';
+export { TokenInfo } from '@surge/token-lists';
 import react, { ErrorInfo } from 'react';
 import { Provider } from '@web3-react/types';
 export { Provider as Eip1193Provider } from '@web3-react/types';
@@ -545,7 +545,7 @@ interface SwapWidgetSkeletonProps {
 }
 declare function SwapWidgetSkeleton({ theme, width }: SwapWidgetSkeletonProps): JSX.Element;
 
-declare const UNISWAP_TOKEN_LIST = "https://gateway.ipfs.io/ipns/tokens.uniswap.org";
+declare const UNISWAP_TOKEN_LIST = "https://gateway.ipfs.io/ipns/tokens.surge.org";
 declare const EMPTY_TOKEN_LIST: never[];
 
 /**
