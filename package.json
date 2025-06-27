@@ -1,6 +1,7 @@
 {
   "name": "@surge/widgets",
   "description": "surge Interface",
+  "version": "2.49.0",
   "homepage": "https://github.com/mruthunj4y/widgets#readme",
   "repository": "https://github.com/mruthunj4y/widgets",
   "files": [
