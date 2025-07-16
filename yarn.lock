@@ -3317,7 +3317,8 @@
 
 "@surge/redux-multicall@https://github.com/mruthunj4y/redux-multicall.git#build":
   version "1.1.8"
-  resolved "https://github.com/mruthunj4y/redux-multicall.git#b49e81bcd5b3adb55269ca707f410fd5aa44fd47"
+  uid "41642a1d31fe503c7fe83ba2b5e7968b55df5886"
+  resolved "https://github.com/mruthunj4y/redux-multicall.git#41642a1d31fe503c7fe83ba2b5e7968b55df5886"
 
 "@surge/router-sdk@https://github.com/mruthunj4y/router-sdk.git#build":
   version "1.4.0"
